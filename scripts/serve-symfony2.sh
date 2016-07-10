@@ -42,8 +42,8 @@ block="server {
     }
 
     # PROD
-    location ~ ^/app\.php(/|$) {
-        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+    location ~ ^/app\.php(/|\$) {
+        fastcgi_split_path_info ^(.+\.php)(/.+)\$;
         fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
         include fastcgi_params;
         fastcgi_param SCRIPT_FILENAME \$document_root\$fastcgi_script_name;
@@ -51,7 +51,6 @@ block="server {
         fastcgi_intercept_errors off;
         fastcgi_buffer_size 16k;
         fastcgi_buffers 4 16k;
-        internal;
     }
 
     location ~ /\.ht {
