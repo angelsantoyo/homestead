@@ -154,7 +154,7 @@ class Homestead
 
     if settings.include? 'sites'
       settings["sites"].each do |site|
-        type = site["type"] ||= "laravel"
+        type = site["type"] ||= "symfony"
 
         if (site.has_key?("hhvm") && site["hhvm"])
           type = "hhvm"
@@ -168,6 +168,12 @@ class Homestead
           s.name = "Creating Site: " + site["map"]
           s.path = scriptDir + "/serve-#{type}.sh"
           s.args = [site["map"], site["to"], site["port"] ||= "80", site["ssl"] ||= "443"]
+        end
+
+
+        # Add Login message for vm
+        config.vm.provision "shell" do |s|
+          s.path = scriptDir + "/server-message.sh"
         end
 
         # Configure The Cron Schedule
