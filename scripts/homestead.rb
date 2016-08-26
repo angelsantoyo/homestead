@@ -208,12 +208,6 @@ class Homestead
             s.path = scriptDir + "/create-mysql.sh"
             s.args = [db]
           end
-
-          config.vm.provision "shell" do |s|
-            s.name = "Creating Postgres Database"
-            s.path = scriptDir + "/create-postgres.sh"
-            s.args = [db]
-          end
         end
     end
 
@@ -262,6 +256,10 @@ class Homestead
     # Install zsh
     config.vm.provision "shell" do |s|
       s.path = scriptDir + "/serve-zsh.sh"
+    end
+
+    config.vm.provision "shell" do |s|
+      s.path = scriptDir + "/serve-xdebug.sh"
     end
   end
 end

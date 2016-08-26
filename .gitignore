@@ -1,2 +1,5 @@
 /vendor
 /.vagrant
+/.idea/copyright
+.idea/*
+.DS_Store
