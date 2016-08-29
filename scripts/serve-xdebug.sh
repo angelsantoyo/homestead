@@ -13,6 +13,7 @@ phpize
 make
 sudo cp modules/xdebug.so /usr/lib/php/20151012/
 
+sudo rm /etc/php/7.0/fpm/conf.d/20-xdebug.ini
 sudo mkdir /etc/php/mods-available
 sudo touch /etc/php/mods-available/xdebug.ini
 
