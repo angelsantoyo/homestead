@@ -257,5 +257,11 @@ class Homestead
     config.vm.provision "shell" do |s|
       s.path = scriptDir + "/serve-zsh.sh"
     end
+
+    # Install zsh
+    config.vm.provision "shell" do |s|
+      s.path = scriptDir + "/serve-xdebug.sh"
+    end
+
   end
 end
