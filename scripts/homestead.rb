@@ -154,7 +154,7 @@ class Homestead
 
     if settings.include? 'sites'
       settings["sites"].each do |site|
-        type = site["type"] ||= "symfony"
+        type = site["type"] ||= "laravel"
 
         if (site.has_key?("hhvm") && site["hhvm"])
           type = "hhvm"
@@ -190,7 +190,7 @@ class Homestead
             end
           end
         end
-
+        
       end
     end
 
@@ -258,7 +258,7 @@ class Homestead
       s.path = scriptDir + "/serve-zsh.sh"
     end
 
-    # Install zsh
+    # Install xdebug
     config.vm.provision "shell" do |s|
       s.path = scriptDir + "/serve-xdebug.sh"
     end
