@@ -20,7 +20,7 @@ sudo touch /etc/php/mods-available/xdebug.ini
 block="; configuration for php xdebug module
 ; priority=20
 zend_extension=/usr/lib/php/20151012/xdebug.so
-xdebug.idekey="phpstorm"
+xdebug.idekey="PHPSTORM"
 xdebug.remote_enable=1
 xdebug.remote_connect_back=1
 xdebug.remote_port=9000
