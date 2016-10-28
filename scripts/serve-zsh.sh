@@ -4,11 +4,11 @@
 # add any commands you wish to this file and they will
 # be run after the Homestead machine is provisioned.
 
-if [ ! -f /usr/local/extra_homestead_software_installed ]; then
 
-    apt-get -y install zsh joe-jupp
-    yes yes |  git clone git://github.com/robbyrussell/oh-my-zsh.git /home/vagrant/.oh-my-zsh
-    cp /home/vagrant/.oh-my-zsh/templates/zshrc.zsh-template /home/vagrant/.zshrc
+
+    sudo apt-get -y install zsh joe-jupp
+    sudo yes yes |  git clone git://github.com/robbyrussell/oh-my-zsh.git /home/vagrant/.oh-my-zsh
+    sudo cp /home/vagrant/.oh-my-zsh/templates/zshrc.zsh-template /home/vagrant/.zshrc
     sudo chsh -s $(which zsh) vagrant
 
     echo 'export PATH=vendor/bin:$PATH'  >> /home/vagrant/.zshrc
@@ -19,5 +19,3 @@ if [ ! -f /usr/local/extra_homestead_software_installed ]; then
 
     touch /home/vagrant/.z
     touch /usr/local/extra_homestead_software_installed
-
-fi
