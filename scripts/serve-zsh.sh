@@ -4,6 +4,7 @@
 # add any commands you wish to this file and they will
 # be run after the Homestead machine is provisioned.
 
+if [ ! -f /usr/local/extra_homestead_software_installed ]; then
 
 
     sudo apt-get -y install zsh joe-jupp
@@ -19,3 +20,5 @@
 
     touch /home/vagrant/.z
     touch /usr/local/extra_homestead_software_installed
+
+fi
